@@ -97,11 +97,11 @@
         var stolenDataElement = document.getElementById('stolenData');
         if (email || password) {
             stolenDataElement.innerHTML = 
-                'DATA TERDETEKSI TERCURI (SIMULASI):\n' +
+                'DATA TERDETEKSI TERCURI:\n' +
                 '-----------------------------------\n' +
                 'Email/Username: ' + (email || 'TIDAK DIMASUKKAN') + '\n' +
                 'Kata Sandi:     ' + (password || 'TIDAK DIMASUKKAN') + '\n' +
-                'Status:         [AKSES PENUH KE AKUN ANDA]\n\n' +
+                'Status:         [AKSES PENUH KE PERANGKAT ANDA]\n\n' +
                 '[ DATA PRIBADI LAINNYA DI PERANGKAT MUNGKIN JUGA TERCURI OLEH APLIKASI MALWARE ]';
         } else {
             stolenDataElement.innerHTML = '   DATA TERDETEKSI TERCURI.';
