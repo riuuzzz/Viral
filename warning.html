@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s0Zkj87Jjs0Zkj87Jjhw1h6Hs0Zkj87Jjhw1h6Hg1g1hw1h6Hs0Zkj87Jjhw1h6Hg1g1</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Monaco', monospace; /* Font ala sistem */
+            background-color: #330000; /* Latar belakang merah gelap */
+            color: #ffcccc; /* Teks merah muda untuk kontras */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Sembunyikan scrollbar jika ada */
+            text-align: center;
+        }
+        .warning-container {
+            background-color: #660000; /* Kotak peringatan lebih gelap */
+            border: 5px solid #ff0000; /* Border merah terang */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7); /* Efek glow merah */
+            max-width: 600px;
+            animation: pulse 1.5s infinite alternate; /* Animasi berkedip */
+        }
+        @keyframes pulse {
+            from {
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 0 50px rgba(255, 0, 0, 1);
+            }
+        }
+        .warning-icon {
+            font-size: 80px; /* Ukuran ikon peringatan */
+            color: #ff0000; /* Warna ikon */
+            margin-bottom: 20px;
+            line-height: 1; /* Hapus spasi ekstra */
+        }
+        .warning-title {
+            font-size: 3em; /* Judul besar */
+            color: #ff0000; /* Warna merah */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .warning-text {
+            font-size: 1.5em; /* Teks isi */
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .data-stolen {
+            font-size: 1.2em;
+            color: #ffff00; /* Warna kuning untuk data yang dicuri */
+            margin-top: 20px;
+            white-space: pre-wrap; /* Mempertahankan baris baru di teks */
+            text-align: left;
+            background-color: #440000;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px dashed #ff0000;
+        }
+        .disclaimer {
+            font-size: 0.9em;
+            color: #cccccc;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="warning-container">
+        <div class="warning-icon">
+            &#9888; </div>
+        <div class="warning-title">
+             WARNING!!
+        </div>
+        <div class="warning-text">
+            Sistem mendeteksi adanya aktivitas mencurigakan.
+            <br>
+            Akses ke perangkat dan data Anda telah terakses!.
+            <br>
+            <span style="color: #ffdd00;">Informasi sensitif Anda mungkin telah dicuri.</span>
+        </div>
+        
+        <div class="data-stolen" id="stolenData">
+            </div>
+
+    <script>
+        // Ambil data yang disimpan dari halaman sebelumnya
+        var email = localStorage.getItem('demoEmail');
+        var password = localStorage.getItem('demoPassword');
+
+        var stolenDataElement = document.getElementById('stolenData');
+        if (email || password) {
+            stolenDataElement.innerHTML = 
+                'DATA TERDETEKSI TERCURI (SIMULASI):\n' +
+                '-----------------------------------\n' +
+                'Email/Username: ' + (email || 'TIDAK DIMASUKKAN') + '\n' +
+                'Kata Sandi:     ' + (password || 'TIDAK DIMASUKKAN') + '\n' +
+                'Status:         [AKSES PENUH KE AKUN ANDA]\n\n' +
+                '[ DATA PRIBADI LAINNYA DI PERANGKAT MUNGKIN JUGA TERCURI OLEH APLIKASI MALWARE ]';
+        } else {
+            stolenDataElement.innerHTML = '   DATA TERDETEKSI TERCURI.';
+        }
+
+        // Hapus data dari localStorage setelah digunakan
+        localStorage.removeItem('demoEmail');
+        localStorage.removeItem('demoPassword');
+    </script>
+</body>
+</html>

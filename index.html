@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Login (Phishing)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .warning-banner {
+            background-color: #ffc;
+            border: 1px solid #e6db55;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .login-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            width: 380px;
+            text-align: center;
+        }
+        .login-box h2 {
+            font-size: 24px;
+            color: #1c1e21;
+            margin-bottom: 20px;
+        }
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 14px 12px;
+            font-size: 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .login-box button {
+            width: 100%;
+            background-color: #1877f2;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 14px 0;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background-color: #166fe5;
+        }
+    </style>
+</head>
+<body>
+
+  
+        <div class="login-box">
+            <h2>Login untuk melanjutkan</h2>
+            <form id="loginForm">
+                <input type="text" id="email" placeholder="Email atau Nomor Telepon" required>
+                <input type="password" id="password" placeholder="Kata Sandi" required>
+                <button type="submit">Masuk</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Hentikan form agar tidak terkirim
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            
+            // Simpan data (simulasi) ke localStorage agar bisa diakses di halaman berikutnya
+            localStorage.setItem('demoEmail', email);
+            localStorage.setItem('demoPassword', password);
+
+            // Alihkan ke halaman peringatan
+            window.location.href = 'warning.html';
+        });
+    </script>
+</body>
+</html>
